@@ -23,4 +23,5 @@ class HEROES2D_API UMyGameInstance : public UGameInstance
 public:
 	void SaveGameData(FVector PlayerLocation, int32 Score);
 	class UMySaveGame* LoadGameData();
+	class UMySaveGame* GetGameData();
 };

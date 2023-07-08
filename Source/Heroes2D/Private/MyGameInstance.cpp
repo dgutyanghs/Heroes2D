@@ -47,3 +47,15 @@ UMySaveGame* UMyGameInstance::LoadGameData()
 		return  nullptr;
 	}
 }
+
+UMySaveGame* UMyGameInstance::GetGameData()
+{
+	if (GameData)
+	{
+		return  GameData;
+	}
+	else
+	{
+		return  nullptr;
+	}
+}
