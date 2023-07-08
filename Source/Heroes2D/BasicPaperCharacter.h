@@ -13,5 +13,15 @@ UCLASS()
 class HEROES2D_API ABasicPaperCharacter : public APaperCharacter
 {
 	GENERATED_BODY()
-	
+
+public:
+	virtual void BeginPlay() override;
+	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+private:
+
+	class UMyGameInstance* MyGameInstance;
+
+	void SavePlayerLocation();
+	void LoadPlayerLocation();
 };
