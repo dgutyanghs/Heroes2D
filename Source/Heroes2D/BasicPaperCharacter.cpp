@@ -20,7 +20,19 @@ void ABasicPaperCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	PlayerInputComponent->BindAction("SaveGame", IE_Pressed, this, &ABasicPaperCharacter::SavePlayerLocation);
 	PlayerInputComponent->BindAction("LoadGame", IE_Pressed, this, &ABasicPaperCharacter::LoadPlayerLocation);
+
+	PlayerInputComponent->BindAxis("MoveForward", this, &ABasicPaperCharacter::MoveForward);
 	
+}
+
+
+
+#pragma  warning("When game started,repeat call MoveForward funtion  without press anykey. reason unknown")
+void ABasicPaperCharacter::MoveForward(float AxisValue)
+{
+	FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::X);
+	UE_LOG(LogTemp, Display, TEXT("moveforward :%02f, %02f, %02f"), Direction.X, Direction.Y, Direction.Z);
+	AddMovementInput(Direction, AxisValue);
 }
 
 void ABasicPaperCharacter::SavePlayerLocation()

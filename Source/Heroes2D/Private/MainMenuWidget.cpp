@@ -12,6 +12,8 @@ void UMainMenuWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 
+	//UMySaveGame::DeleteSlot();
+
 	GameData = Cast<UMySaveGame>(UGameplayStatics::LoadGameFromSlot(SaveSlot, 0));
 	if (GameData)
 	{
@@ -20,8 +22,8 @@ void UMainMenuWidget::NativeConstruct()
 		UE_LOG(LogTemp, Display, TEXT("GameData not nullptr"));
 	} else
 	{
-		LoadGameBtn->SetIsEnabled(false);
 		ContinueBtn->SetIsEnabled(false);
+		LoadGameBtn->SetIsEnabled(false);
 		UE_LOG(LogTemp, Display, TEXT("GameData is nullptr"));
 		
 	}

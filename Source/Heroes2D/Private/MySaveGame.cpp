@@ -3,3 +3,9 @@
 
 #include "MySaveGame.h"
 
+#include "Kismet/GameplayStatics.h"
+
+void UMySaveGame::DeleteSlot(FString slot)
+{
+		UGameplayStatics::DeleteGameInSlot(slot,0);
+}

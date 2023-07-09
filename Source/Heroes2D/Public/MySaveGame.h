@@ -21,4 +21,11 @@ public:
 
 	UPROPERTY()
 	int32 Score;
+
+	/*
+	UPROPERTY()
+	FString SaveSlot = "GameData";
+	*/
+
+	static void DeleteSlot(FString slot = "GameData");
 };

@@ -18,6 +18,8 @@ public:
 	virtual void BeginPlay() override;
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
+	void MoveForward(float AxisValue);
+
 private:
 
 	class UMyGameInstance* MyGameInstance;
